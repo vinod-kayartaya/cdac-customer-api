@@ -2,9 +2,15 @@ pipeline {
     agent any
 
     stages{
-        stage('just testing...'){
+        stage('clean'){
             steps {
-                echo "this is working..."
+                sh "mvn clean"
+            }
+        }
+        
+        stage('compile'){
+            steps {
+                sh "mvn compile"
             }
         }
     }
